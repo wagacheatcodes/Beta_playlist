@@ -8,51 +8,52 @@ on:
 jobs:
   generate-json:
     runs-on: ubuntu-latest
-    # 6 hours is the hard limit. We set 350 mins (5h 50m) to be safe.
     timeout-minutes: 350
 
     steps:
-      - name: Checkout Code
+      # 1. Checkout the Public Playlist Repo (Where files will be saved)
+      - name: Checkout Playlist Repo
         uses: actions/checkout@v4
+        with:
+          path: playlist
+
+      # 2. Checkout the Private Script Repo (Using your PAT)
+      - name: Checkout Private Scripts Repo
+        uses: actions/checkout@v4
+        with:
+          repository: wagacheatcodes/Beta
+          token: ${{ secrets.MY_PAT }}
+          path: private_scripts
 
       - name: Install Dependencies
         run: pip install requests
 
-      # -----------------------------------------------------------
-      # 1. Run Movies Script (Now in Root)
-      # -----------------------------------------------------------
+      # 3. Run Movies Generator
+      # We run inside 'playlist' folder, but call the script from 'private_scripts'
       - name: Run Movies Generator
-        run: python movies_runner.py
-        # No 'working-directory' needed because files are now in Root
+        working-directory: playlist
+        run: python ../private_scripts/scripts/movies_runner.py
 
-      # -----------------------------------------------------------
-      # 2. Run Series Script (Now in Root)
-      # -----------------------------------------------------------
+      # 4. Run Series Generator
       - name: Run Series Generator
-        run: python series_runner.py
+        working-directory: playlist
+        run: python ../private_scripts/scripts/series_runner.py
 
-      # -----------------------------------------------------------
-      # 3. Save Data (Commit & Push)
-      # -----------------------------------------------------------
+      # 5. Commit and Push (Only affects the Playlist repo)
       - name: Commit and Push Changes
+        working-directory: playlist
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           
-          # Stage the 'dist' folder
+          # Stage the dist folder found in the playlist directory
           git add dist/
           
-          # Check for changes
           if [ -n "$(git status --porcelain)" ]; then
             echo "Changes detected. Committing..."
-            
-            # Commit locally first
             git commit -m "Update VOD Data [skip ci]"
-            
-            # Pull updates (Rebase) then Push to avoid conflicts
             git pull --rebase origin main
             git push origin main
-            echo "Success! Data pushed."
           else
             echo "No changes detected."
           fi
