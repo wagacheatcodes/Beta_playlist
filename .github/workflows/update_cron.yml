@@ -8,16 +8,18 @@ on:
 jobs:
   generate-json:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    # Set to 360 mins (6 hours) to give scripts maximum time to run
+    timeout-minutes: 360
 
     steps:
-      # 1. Checkout the Public Playlist Repo (Where files will be saved)
+      # 1. Checkout Playlist Repo (Public) - where JSONs are saved
       - name: Checkout Playlist Repo
         uses: actions/checkout@v4
         with:
           path: playlist
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }} # Use PAT for write access
 
-      # 2. Checkout the Private Script Repo (Using your PAT)
+      # 2. Checkout Scripts Repo (Private) - where runners are
       - name: Checkout Private Scripts Repo
         uses: actions/checkout@v4
         with:
@@ -29,31 +31,39 @@ jobs:
         run: pip install requests
 
       # 3. Run Movies Generator
-      # We run inside 'playlist' folder, but call the script from 'private_scripts'
+      # The script has the "sleep" fix to prevent 429 errors
       - name: Run Movies Generator
         working-directory: playlist
         run: python ../private_scripts/scripts/movies_runner.py
 
       # 4. Run Series Generator
+      # Runs even if movies script finishes or hits time limit
       - name: Run Series Generator
+        if: always() 
         working-directory: playlist
         run: python ../private_scripts/scripts/series_runner.py
 
-      # 5. Commit and Push (Only affects the Playlist repo)
+      # 5. Commit and Push Changes
+      # Uses the PAT to push, fixing the "Permission Denied" error
       - name: Commit and Push Changes
+        if: always()
         working-directory: playlist
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           
-          # Stage the dist folder found in the playlist directory
+          # Force add the generated JSONs in dist folder
           git add dist/
           
+          # Check if there are changes to save
           if [ -n "$(git status --porcelain)" ]; then
             echo "Changes detected. Committing..."
+            
+            # Commit locally
             git commit -m "Update VOD Data [skip ci]"
+            
+            # Pull any remote changes to prevent conflicts
             git pull --rebase origin main
-            git push origin main
-          else
-            echo "No changes detected."
-          fi
+            
+            # PUSH using the Secret Token explicitly
+            git push https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/wagacheatcodes/Beta_playlist.git
