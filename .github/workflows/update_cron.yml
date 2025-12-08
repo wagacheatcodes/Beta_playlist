@@ -6,21 +6,20 @@ on:
     - cron: '0 */6 * * *'
 
 jobs:
-  generate-json:
+  # ======================================================
+  # JOB 1: UPDATE MOVIES
+  # ======================================================
+  update-movies:
     runs-on: ubuntu-latest
-    # Set to 360 mins (6 hours) to give scripts maximum time to run
     timeout-minutes: 360
-
     steps:
-      # 1. Checkout Playlist Repo (Public) - where JSONs are saved
       - name: Checkout Playlist Repo
         uses: actions/checkout@v4
         with:
           path: playlist
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }} # Use PAT for write access
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
 
-      # 2. Checkout Scripts Repo (Private) - where runners are
-      - name: Checkout Private Scripts Repo
+      - name: Checkout Scripts Repo
         uses: actions/checkout@v4
         with:
           repository: wagacheatcodes/Beta
@@ -30,40 +29,63 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
-      # 3. Run Movies Generator
-      # The script has the "sleep" fix to prevent 429 errors
       - name: Run Movies Generator
         working-directory: playlist
+        # This script has internal auto-push logic
         run: python ../private_scripts/scripts/movies_runner.py
 
-      # 4. Run Series Generator
-      # Runs even if movies script finishes or hits time limit
-      - name: Run Series Generator
-        if: always() 
-        working-directory: playlist
-        run: python ../private_scripts/scripts/series_runner.py
-
-      # 5. Commit and Push Changes
-      # Uses the PAT to push, fixing the "Permission Denied" error
-      - name: Commit and Push Changes
+      # Safety Net: Final Push if script exits without pushing
+      - name: Final Push Movies
         if: always()
         working-directory: playlist
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          
-          # Force add the generated JSONs in dist folder
           git add dist/
-          
-          # Check if there are changes to save
           if [ -n "$(git status --porcelain)" ]; then
-            echo "Changes detected. Committing..."
-            
-            # Commit locally
-            git commit -m "Update VOD Data [skip ci]"
-            
-            # Pull any remote changes to prevent conflicts
+            git commit -m "Update Movies [skip ci]" || echo "Nothing to commit"
             git pull --rebase origin main
-            
-            # PUSH using the Secret Token explicitly
-            git push https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/wagacheatcodes/Beta_playlist.git
+            git push https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/wagacheatcodes/Beta_playlist.git main
+          fi
+
+  # ======================================================
+  # JOB 2: UPDATE SERIES (RUNS PARALLEL)
+  # ======================================================
+  update-series:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout Playlist Repo
+        uses: actions/checkout@v4
+        with:
+          path: playlist
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+
+      - name: Checkout Scripts Repo
+        uses: actions/checkout@v4
+        with:
+          repository: wagacheatcodes/Beta
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: private_scripts
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Series Generator
+        working-directory: playlist
+        # This script has retry logic for 429 errors
+        run: python ../private_scripts/scripts/series_runner.py
+
+      # Safety Net: Final Push
+      - name: Final Push Series
+        if: always()
+        working-directory: playlist
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add dist/
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Update Series [skip ci]" || echo "Nothing to commit"
+            git pull --rebase origin main
+            git push https://${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/wagacheatcodes/Beta_playlist.git main
+          fi
