@@ -1,0 +1,48 @@
+name: Scrape & Update
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Runs every 6 hours
+  workflow_dispatch:
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Public Data (Beta_playlist)
+        uses: actions/checkout@v4
+
+      - name: Checkout Private Scripts (Beta)
+        uses: actions/checkout@v4
+        with:
+          repository: wagacheatcodes/Beta
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: engine
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install -r engine/requirements.txt
+
+      - name: Run Movie Scraper
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python engine/scripts/movies_runner.py
+
+      - name: Run Series Scraper
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+        run: python engine/scripts/series_runner.py
+
+      - name: Save Results
+        run: |
+          git config user.name "Auto-Bot"
+          git config user.email "bot@github.com"
+          git add dist/*.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Content [skip ci]" && git push)
