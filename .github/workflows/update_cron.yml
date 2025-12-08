@@ -1,116 +1,65 @@
-name: Parallel Scrape
+name: Update VOD Data
 
 on:
+  workflow_dispatch:      # Allows you to click "Run workflow" manually
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours
-  workflow_dispatch:      # Allows manual 'Run Now' button
+    - cron: '0 */6 * * *' # Optional: Runs automatically every 6 hours
 
 jobs:
-  # --- JOB 1: MOVIES ---
-  scrape-movies:
+  generate-json:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    # Set timeout slightly higher than your script limit (5h 30m = 330m)
+    # 350m gives buffer time for setup and git pushing.
+    timeout-minutes: 350
+
     steps:
-      - name: Checkout Data
+      - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Full history for safe updates
 
-      - name: Checkout Scripts
-        uses: actions/checkout@v4
-        with:
-          repository: wagacheatcodes/Beta
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
-          path: engine
-
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install -r engine/requirements.txt
-
-      - name: Run Movie Scraper
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-        run: python engine/scripts/movies_runner.py
-
-      - name: Safe Push (Movies)
         run: |
-          git config user.name "Auto-Bot"
-          git config user.email "bot@github.com"
-          git add dist/movies.json
-          
-          # Check for changes before committing
-          if git diff --staged --quiet; then
-            echo "No changes."
-            exit 0
-          fi
+          pip install requests
 
-          git commit -m "Update Movies [skip ci]"
-          
-          # Retry Loop for Parallel Safety (High retry count)
-          n=0
-          until [ "$n" -ge 10 ]
-          do
-             git pull --rebase origin main && git push && break
-             n=$((n+1))
-             echo "Conflict detected, retrying in 10s... ($n/10)"
-             sleep 10
-          done
+      - name: Run Movies Generator
+        # This script runs for max 5.5 hours, or until finished.
+        # It saves to dist/movies.json every few minutes.
+        run: python movies_runner.py
 
-  # --- JOB 2: SERIES (Runs concurrently) ---
-  scrape-series:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout Data
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Run Series Generator
+        # If movies finish early, this will run. 
+        # If movies takes full 5.5h, this might skip until next run.
+        # The script's "resume" logic handles this automatically.
+        run: python series_runner.py
 
-      - name: Checkout Scripts
-        uses: actions/checkout@v4
-        with:
-          repository: wagacheatcodes/Beta
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
-          path: engine
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'
-
-      - name: Install Dependencies
-        run: pip install -r engine/requirements.txt
-
-      - name: Run Series Scraper
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-        run: python engine/scripts/series_runner.py
-
-      - name: Safe Push (Series)
+      - name: Commit and Push Changes
+        # This logic fixes the "unstaged changes" error
         run: |
-          git config user.name "Auto-Bot"
-          git config user.email "bot@github.com"
-          git add dist/series.json dist/episodes.json
+          echo "Configuring Git..."
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
           
-          if git diff --staged --quiet; then
-            echo "No changes."
-            exit 0
+          # 1. Stage the 'dist' folder (where your scripts save data)
+          git add dist/
+          
+          # 2. Check if there is anything to save
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected. Committing..."
+            
+            # 3. Commit LOCALLY first. 
+            # This locks your new JSON data into the history so 'git pull' won't complain.
+            git commit -m "Update VOD Data [skip ci]"
+            
+            # 4. Pull latest changes from GitHub (Rebase keeps history clean)
+            git pull --rebase origin main
+            
+            # 5. Push the merged result back to GitHub
+            git push origin main
+            echo "Success! Data pushed to repository."
+          else
+            echo "No changes detected. Skipping push."
           fi
-
-          git commit -m "Update Series [skip ci]"
-          
-          # Retry Loop for Parallel Safety
-          n=0
-          until [ "$n" -ge 10 ]
-          do
-             git pull --rebase origin main && git push && break
-             n=$((n+1))
-             echo "Conflict detected, retrying in 10s... ($n/10)"
-             sleep 10
-          done
