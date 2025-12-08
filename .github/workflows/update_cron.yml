@@ -1,20 +1,58 @@
-name: Debug File Structure
+name: Update VOD Data
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
-  debug-structure:
+  generate-json:
     runs-on: ubuntu-latest
+    # 6 hours is the hard limit. We set 350 mins (5h 50m) to be safe.
+    timeout-minutes: 350
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: List ALL Files
+      - name: Install Dependencies
+        run: pip install requests
+
+      # -----------------------------------------------------------
+      # 1. Run Movies Script (Now in Root)
+      # -----------------------------------------------------------
+      - name: Run Movies Generator
+        run: python movies_runner.py
+        # No 'working-directory' needed because files are now in Root
+
+      # -----------------------------------------------------------
+      # 2. Run Series Script (Now in Root)
+      # -----------------------------------------------------------
+      - name: Run Series Generator
+        run: python series_runner.py
+
+      # -----------------------------------------------------------
+      # 3. Save Data (Commit & Push)
+      # -----------------------------------------------------------
+      - name: Commit and Push Changes
         run: |
-          echo "=========================================="
-          echo "CURRENT FOLDER:"
-          pwd
-          echo "=========================================="
-          echo "RECURSIVE FILE LIST:"
-          ls -R
-          echo "=========================================="
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Stage the 'dist' folder
+          git add dist/
+          
+          # Check for changes
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected. Committing..."
+            
+            # Commit locally first
+            git commit -m "Update VOD Data [skip ci]"
+            
+            # Pull updates (Rebase) then Push to avoid conflicts
+            git pull --rebase origin main
+            git push origin main
+            echo "Success! Data pushed."
+          else
+            echo "No changes detected."
+          fi
