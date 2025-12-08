@@ -1,21 +1,23 @@
-name: Scrape & Update
+name: Parallel Scrape
 
 on:
   schedule:
     - cron: '0 */6 * * *' # Runs every 6 hours
-  workflow_dispatch:
+  workflow_dispatch:      # Allows manual 'Run Now' button
 
 jobs:
-  run-scraper:
+  # --- JOB 1: MOVIES ---
+  scrape-movies:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      - name: Checkout Public Data (Beta_playlist)
+      - name: Checkout Data
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full history for safe updates
 
-      - name: Checkout Private Scripts (Beta)
+      - name: Checkout Scripts
         uses: actions/checkout@v4
         with:
           repository: wagacheatcodes/Beta
@@ -35,14 +37,80 @@ jobs:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python engine/scripts/movies_runner.py
 
+      - name: Safe Push (Movies)
+        run: |
+          git config user.name "Auto-Bot"
+          git config user.email "bot@github.com"
+          git add dist/movies.json
+          
+          # Check for changes before committing
+          if git diff --staged --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git commit -m "Update Movies [skip ci]"
+          
+          # Retry Loop for Parallel Safety (High retry count)
+          n=0
+          until [ "$n" -ge 10 ]
+          do
+             git pull --rebase origin main && git push && break
+             n=$((n+1))
+             echo "Conflict detected, retrying in 10s... ($n/10)"
+             sleep 10
+          done
+
+  # --- JOB 2: SERIES (Runs concurrently) ---
+  scrape-series:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Data
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout Scripts
+        uses: actions/checkout@v4
+        with:
+          repository: wagacheatcodes/Beta
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: engine
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install -r engine/requirements.txt
+
       - name: Run Series Scraper
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
         run: python engine/scripts/series_runner.py
 
-      - name: Save Results
+      - name: Safe Push (Series)
         run: |
           git config user.name "Auto-Bot"
           git config user.email "bot@github.com"
-          git add dist/*.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Content [skip ci]" && git push)
+          git add dist/series.json dist/episodes.json
+          
+          if git diff --staged --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git commit -m "Update Series [skip ci]"
+          
+          # Retry Loop for Parallel Safety
+          n=0
+          until [ "$n" -ge 10 ]
+          do
+             git pull --rebase origin main && git push && break
+             n=$((n+1))
+             echo "Conflict detected, retrying in 10s... ($n/10)"
+             sleep 10
+          done
