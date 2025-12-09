@@ -2338,5 +2338,946 @@
       "S01E02",
       "S01E03"
     ]
+  },
+  {
+    "tmdb_id": "custom_864237",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E14"
+    ]
+  },
+  {
+    "tmdb_id": "custom_591398",
+    "season": "Season 23",
+    "episodes": [
+      "S02E16",
+      "S02E17",
+      "S02E18",
+      "S02E19"
+    ]
+  },
+  {
+    "tmdb_id": "custom_707312",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_801418",
+    "season": "Season 2024",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10"
+    ]
+  },
+  {
+    "tmdb_id": "custom_464636",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10",
+      "S01E11",
+      "S01E12",
+      "S01E13",
+      "S01E14",
+      "S01E15",
+      "S01E16",
+      "S01E17",
+      "S01E18",
+      "S01E19",
+      "S01E20",
+      "S01E21",
+      "S01E22",
+      "S01E21"
+    ]
+  },
+  {
+    "tmdb_id": "custom_603201",
+    "season": "Season 11",
+    "episodes": [
+      "S11E10",
+      "S11E14"
+    ]
+  },
+  {
+    "tmdb_id": "custom_507325",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10"
+    ]
+  },
+  {
+    "tmdb_id": "custom_206237",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E02",
+      "S01E03",
+      "S01E03",
+      "S01E04",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E06",
+      "S01E07",
+      "S01E07",
+      "S01E08",
+      "S01E08",
+      "S01E09",
+      "S01E09",
+      "S01E10",
+      "S01E10"
+    ]
+  },
+  {
+    "tmdb_id": "custom_206237",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E01",
+      "S02E02",
+      "S02E02",
+      "S02E03",
+      "S02E03",
+      "S02E04",
+      "S02E05",
+      "S02E05",
+      "S02E06",
+      "S02E06",
+      "S02E07",
+      "S02E16",
+      "S02E17",
+      "S02E20",
+      "S02E20"
+    ]
+  },
+  {
+    "tmdb_id": "custom_345151",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04"
+    ]
+  },
+  {
+    "tmdb_id": "custom_971935",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05"
+    ]
+  },
+  {
+    "tmdb_id": "custom_956389",
+    "season": "Season 2023",
+    "episodes": [
+      "S01E04",
+      "S01E05",
+      "S01E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_310477",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10",
+      "S01E11",
+      "S01E12",
+      "S01E13",
+      "S01E14",
+      "S01E15",
+      "S01E16",
+      "S01E17",
+      "S01E18",
+      "S01E19",
+      "S01E20",
+      "S01E21",
+      "S01E22"
+    ]
+  },
+  {
+    "tmdb_id": "custom_310477",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E05",
+      "S02E06",
+      "S02E07",
+      "S02E08",
+      "S02E09",
+      "S02E10",
+      "S02E11",
+      "S02E12",
+      "S02E13",
+      "S02E14",
+      "S02E15",
+      "S02E16",
+      "S02E17",
+      "S02E18",
+      "S02E19",
+      "S02E20",
+      "S02E21",
+      "S02E22",
+      "S02E23",
+      "S02E24",
+      "S02E25"
+    ]
+  },
+  {
+    "tmdb_id": "custom_225593",
+    "season": "Season 03",
+    "episodes": [
+      "S03E01",
+      "S03E02",
+      "S03E03",
+      "S03E04",
+      "S03E05",
+      "S03E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_225593",
+    "season": "Season 05",
+    "episodes": [
+      "S05E01",
+      "S05E02",
+      "S05E03",
+      "S05E04",
+      "S05E05",
+      "S05E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_120300",
+    "season": "Season 2024",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_940623",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E02",
+      "S01E03",
+      "S01E03",
+      "S01E04",
+      "S01E04",
+      "S01E05",
+      "S01E05",
+      "S01E06",
+      "S01E06",
+      "S01E07",
+      "S01E07",
+      "S01E08",
+      "S01E08",
+      "S01E09",
+      "S01E09",
+      "S01E10",
+      "S01E10",
+      "S01E11",
+      "S01E11",
+      "S01E12",
+      "S01E12",
+      "S01E13",
+      "S01E13",
+      "S01E14",
+      "S01E14",
+      "S01E15",
+      "S01E15",
+      "S01E16",
+      "S01E16",
+      "S01E17",
+      "S01E17",
+      "S01E18",
+      "S01E18",
+      "S01E19",
+      "S01E19",
+      "S01E20",
+      "S01E20",
+      "S01E21",
+      "S01E21",
+      "S01E22",
+      "S01E22",
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10",
+      "S01E11",
+      "S01E12",
+      "S01E13",
+      "S01E14",
+      "S01E15",
+      "S01E16",
+      "S01E17",
+      "S01E18",
+      "S01E19",
+      "S01E20",
+      "S01E21",
+      "S01E22"
+    ]
+  },
+  {
+    "tmdb_id": "custom_289964",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_289964",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E05",
+      "S02E06",
+      "S02E07",
+      "S02E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_725780",
+    "season": "Season 2014",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_725780",
+    "season": "Season 2014",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E05",
+      "S02E06",
+      "S02E07",
+      "S02E08",
+      "S02E09",
+      "S02E10",
+      "S02E11",
+      "S02E12",
+      "S02E13",
+      "S02E14",
+      "S02E15",
+      "S02E16",
+      "S02E17",
+      "S02E18",
+      "S02E19",
+      "S02E20"
+    ]
+  },
+  {
+    "tmdb_id": "custom_725780",
+    "season": "Season 2014",
+    "episodes": [
+      "S03E01",
+      "S03E02",
+      "S03E03",
+      "S03E04",
+      "S03E05",
+      "S03E06",
+      "S03E07",
+      "S03E08",
+      "S03E09",
+      "S03E10"
+    ]
+  },
+  {
+    "tmdb_id": "custom_15349",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E03",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_810206",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10",
+      "S01E11",
+      "S01E12",
+      "S01E13",
+      "S01E14"
+    ]
+  },
+  {
+    "tmdb_id": "custom_810206",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E05",
+      "S02E06",
+      "S02E07",
+      "S02E08",
+      "S02E09",
+      "S02E10",
+      "S02E11",
+      "S02E12",
+      "S02E13",
+      "S02E14",
+      "S02E15",
+      "S02E16",
+      "S02E17",
+      "S02E18",
+      "S02E19",
+      "S02E20",
+      "S02E21",
+      "S02E22",
+      "S02E23",
+      "S02E24",
+      "S02E25"
+    ]
+  },
+  {
+    "tmdb_id": "custom_48780",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10",
+      "S01E11",
+      "S01E12"
+    ]
+  },
+  {
+    "tmdb_id": "custom_150707",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E02",
+      "S01E03",
+      "S01E03",
+      "S01E04",
+      "S01E04",
+      "S01E05",
+      "S01E05",
+      "S01E06",
+      "S01E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_150707",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E01",
+      "S02E02",
+      "S02E02",
+      "S02E03",
+      "S02E03",
+      "S02E04",
+      "S02E04",
+      "S02E05",
+      "S02E05",
+      "S02E06",
+      "S02E06",
+      "S02E07",
+      "S02E07",
+      "S02E08",
+      "S02E08",
+      "S02E09",
+      "S02E09",
+      "S02E10",
+      "S02E10"
+    ]
+  },
+  {
+    "tmdb_id": "custom_887978",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E04"
+    ]
+  },
+  {
+    "tmdb_id": "custom_66613",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10",
+      "S01E11",
+      "S01E12",
+      "S01E13",
+      "S01E14",
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E10",
+      "S01E11",
+      "S01E12",
+      "S01E13",
+      "S01E14"
+    ]
+  },
+  {
+    "tmdb_id": "custom_226674",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E02",
+      "S01E03",
+      "S01E03",
+      "S01E04",
+      "S01E04",
+      "S01E05",
+      "S01E05",
+      "S01E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_226674",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E01",
+      "S02E02",
+      "S02E02",
+      "S02E03",
+      "S02E03",
+      "S02E04",
+      "S02E04",
+      "S02E05",
+      "S02E05",
+      "S02E06",
+      "S02E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_774938",
+    "season": "Season 2018",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07"
+    ]
+  },
+  {
+    "tmdb_id": "custom_369173",
+    "season": "Season 2023",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E09",
+      "S01E10"
+    ]
+  },
+  {
+    "tmdb_id": "custom_369173",
+    "season": "Season 2023",
+    "episodes": [
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E06",
+      "S02E08",
+      "S02E09",
+      "S02E10"
+    ]
+  },
+  {
+    "tmdb_id": "custom_279838",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_279838",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E05",
+      "S02E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_115851",
+    "season": "Season 2023",
+    "episodes": [
+      "S01E01",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_115851",
+    "season": "Season 2023",
+    "episodes": [
+      "S02E01",
+      "S02E01",
+      "S02E02",
+      "S02E02",
+      "S02E03",
+      "S02E03",
+      "S02E04",
+      "S02E04",
+      "S02E05",
+      "S02E05",
+      "S02E06",
+      "S02E06",
+      "S02E07",
+      "S02E07",
+      "S02E08",
+      "S02E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_526659",
+    "season": "Season 06",
+    "episodes": [
+      "S06E14",
+      "S06E33",
+      "S06E34"
+    ]
+  },
+  {
+    "tmdb_id": "custom_526659",
+    "season": "Season 07",
+    "episodes": [
+      "S07E24",
+      "S07E36"
+    ]
+  },
+  {
+    "tmdb_id": "custom_196682",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07"
+    ]
+  },
+  {
+    "tmdb_id": "custom_292658",
+    "season": "Season 01",
+    "episodes": [
+      "S01E13"
+    ]
+  },
+  {
+    "tmdb_id": "custom_882282",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E04"
+    ]
+  },
+  {
+    "tmdb_id": "custom_37551",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E03"
+    ]
+  },
+  {
+    "tmdb_id": "custom_180316",
+    "season": "Season 1979",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E06",
+      "S01E07",
+      "S01E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_621750",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E05"
+    ]
+  },
+  {
+    "tmdb_id": "custom_311007",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E02",
+      "S01E02",
+      "S01E03",
+      "S01E03",
+      "S01E04",
+      "S01E04",
+      "S01E05",
+      "S01E05",
+      "S01E06",
+      "S01E06",
+      "S01E06",
+      "S01E07",
+      "S01E07",
+      "S01E08",
+      "S01E08"
+    ]
+  },
+  {
+    "tmdb_id": "custom_811130",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E03",
+      "S01E05",
+      "S01E06",
+      "S01E10",
+      "S01E11"
+    ]
+  },
+  {
+    "tmdb_id": "custom_109092",
+    "season": "Season 2021",
+    "episodes": [
+      "S01E01"
+    ]
+  },
+  {
+    "tmdb_id": "custom_109092",
+    "season": "Season 2021",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04"
+    ]
+  },
+  {
+    "tmdb_id": "custom_804792",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E05",
+      "S01E07",
+      "S01E08",
+      "S01E09"
+    ]
+  },
+  {
+    "tmdb_id": "custom_203684",
+    "season": "Season 02",
+    "episodes": [
+      "S02E01",
+      "S02E02",
+      "S02E03",
+      "S02E04",
+      "S02E05",
+      "S02E06"
+    ]
+  },
+  {
+    "tmdb_id": "custom_226846",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E06",
+      "S01E07",
+      "S01E08",
+      "S01E09",
+      "S01E11",
+      "S01E12",
+      "S01E13"
+    ]
+  },
+  {
+    "tmdb_id": "custom_585967",
+    "season": "Season 01",
+    "episodes": [
+      "S01E01",
+      "S01E01",
+      "S01E01",
+      "S01E02",
+      "S01E02",
+      "S01E02",
+      "S01E03",
+      "S01E03",
+      "S01E03",
+      "S01E04",
+      "S01E04",
+      "S01E04",
+      "S01E05",
+      "S01E05",
+      "S01E05",
+      "S01E06",
+      "S01E06",
+      "S01E06"
+    ]
   }
 ]
