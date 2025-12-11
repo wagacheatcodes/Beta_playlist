@@ -96900,5 +96900,31 @@
     "folder_url": "https://a.111477.xyz/tvs/Unlock%20My%20Boss/",
     "rating": 0,
     "rating_5based": 0
+  },
+  {
+    "num": 7455,
+    "name": "Moonbase 8",
+    "series_id": 618296,
+    "tmdb_id": "custom_618296",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Moonbase%208/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7456,
+    "name": "Percy Jackson and the Olympians",
+    "series_id": 6510,
+    "tmdb_id": "custom_6510",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Percy%20Jackson%20and%20the%20Olympians/",
+    "rating": 0,
+    "rating_5based": 0
   }
 ]
