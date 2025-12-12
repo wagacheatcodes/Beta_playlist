@@ -96926,5 +96926,83 @@
     "folder_url": "https://a.111477.xyz/tvs/Percy%20Jackson%20and%20the%20Olympians/",
     "rating": 0,
     "rating_5based": 0
+  },
+  {
+    "num": 7457,
+    "name": "3rd Rock from the Sun",
+    "series_id": 742866,
+    "tmdb_id": "custom_742866",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/3rd%20Rock%20from%20the%20Sun/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7458,
+    "name": "Ginger and the Vegesaurs",
+    "series_id": 31560,
+    "tmdb_id": "custom_31560",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Ginger%20and%20the%20Vegesaurs/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7459,
+    "name": "Keeping Up Appearances",
+    "series_id": 435912,
+    "tmdb_id": "custom_435912",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Keeping%20Up%20Appearances/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7460,
+    "name": "La R\u00e9volution",
+    "series_id": 430881,
+    "tmdb_id": "custom_430881",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/La%20R%C3%A9volution/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7461,
+    "name": "The Legend of Calamity Jane",
+    "series_id": 733536,
+    "tmdb_id": "custom_733536",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/The%20Legend%20of%20Calamity%20Jane/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7462,
+    "name": "The Return of Superman",
+    "series_id": 739407,
+    "tmdb_id": "custom_739407",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/The%20Return%20of%20Superman/",
+    "rating": 0,
+    "rating_5based": 0
   }
 ]
