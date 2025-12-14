@@ -97095,5 +97095,57 @@
     "folder_url": "https://a.111477.xyz/tvs/Up%20Here/",
     "rating": 0,
     "rating_5based": 0
+  },
+  {
+    "num": 7470,
+    "name": "All Elite Wrestling - Dynamite",
+    "series_id": 280589,
+    "tmdb_id": "custom_280589",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/All%20Elite%20Wrestling%20-%20Dynamite/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7471,
+    "name": "Kamen Rider ZEZTZ",
+    "series_id": 367525,
+    "tmdb_id": "custom_367525",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Kamen%20Rider%20ZEZTZ/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7472,
+    "name": "Seducing Drake Palma",
+    "series_id": 318042,
+    "tmdb_id": "custom_318042",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Seducing%20Drake%20Palma/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7473,
+    "name": "Twelve",
+    "series_id": 515861,
+    "tmdb_id": "custom_515861",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Twelve/",
+    "rating": 0,
+    "rating_5based": 0
   }
 ]
