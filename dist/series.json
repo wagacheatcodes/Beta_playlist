@@ -97264,5 +97264,44 @@
     "folder_url": "https://a.111477.xyz/tvs/The%20Theatre%20Stories/",
     "rating": 0,
     "rating_5based": 0
+  },
+  {
+    "num": 7483,
+    "name": "Lethal Weapons of Love and Passion",
+    "series_id": 994438,
+    "tmdb_id": "custom_994438",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Lethal%20Weapons%20of%20Love%20and%20Passion/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7484,
+    "name": "Nepobaby",
+    "series_id": 463214,
+    "tmdb_id": "custom_463214",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Nepobaby/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7485,
+    "name": "Single Papa",
+    "series_id": 774279,
+    "tmdb_id": "custom_774279",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Single%20Papa/",
+    "rating": 0,
+    "rating_5based": 0
   }
 ]
