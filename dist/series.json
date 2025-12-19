@@ -97511,5 +97511,83 @@
     "folder_url": "https://a.111477.xyz/tvs/Wu%20Xin%20-%20The%20Monster%20Killer/",
     "rating": 0,
     "rating_5based": 0
+  },
+  {
+    "num": 7502,
+    "name": "Crowd Control (2025)",
+    "series_id": 991043,
+    "tmdb_id": "custom_991043",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Crowd%20Control%20%282025%29/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7503,
+    "name": "Legend of Lu Zhen",
+    "series_id": 649417,
+    "tmdb_id": "custom_649417",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/Legend%20of%20Lu%20Zhen/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7504,
+    "name": "MasterChef Italia",
+    "series_id": 413610,
+    "tmdb_id": "custom_413610",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/MasterChef%20Italia/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7505,
+    "name": "The Manny",
+    "series_id": 881575,
+    "tmdb_id": "custom_881575",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/The%20Manny/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7506,
+    "name": "The Price of Confession",
+    "series_id": 480641,
+    "tmdb_id": "custom_480641",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/The%20Price%20of%20Confession/",
+    "rating": 0,
+    "rating_5based": 0
+  },
+  {
+    "num": 7507,
+    "name": "WWE SmackDown",
+    "series_id": 279182,
+    "tmdb_id": "custom_279182",
+    "cover": "",
+    "plot": "",
+    "backdrop_path": [],
+    "category_id": "1",
+    "folder_url": "https://a.111477.xyz/tvs/WWE%20SmackDown/",
+    "rating": 0,
+    "rating_5based": 0
   }
 ]
